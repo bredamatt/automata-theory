@@ -15,9 +15,15 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
         
-      - name: pdflatex main
+      - name: pdflatex
         uses: dante-ev/latex-action@latest
         with:
           root_file: src/main.tex
           compiler: pdflatex
-          args: -output-dir=out/
+          args: -output-dir=out
+    
+      - name: upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: main.pdf
+          path: out/main.pdf
