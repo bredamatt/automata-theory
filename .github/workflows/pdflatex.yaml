@@ -19,8 +19,7 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: src/main.tex
-          compiler: pdflatex
-          args: -output-dir=out/ -no-shell-escape
+          args: -output-dir=out/
     
       - name: upload artifact
         uses: actions/upload-artifact@v3
