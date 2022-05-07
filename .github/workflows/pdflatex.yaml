@@ -13,6 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: checkout@v2
+        uses: actions/checkout@v2
       - name: generate output
         run: pdflatex --output-dir out/ src/main.tex
