@@ -14,5 +14,10 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
-      - name: generate output
-        run: pdflatex --output-dir out/ src/main.tex
+        
+      - name: pdflatex main
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: src/main.tex
+          compiler: pdflatex
+          args: -output-dir=out/
