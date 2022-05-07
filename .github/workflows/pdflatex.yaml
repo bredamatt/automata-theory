@@ -26,4 +26,6 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: main.pdf
-          path: out/main.pdf
+          path: |
+            out/main.pdf
+            out/main.log
