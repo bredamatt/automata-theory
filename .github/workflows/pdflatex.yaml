@@ -20,7 +20,7 @@ jobs:
         with:
           root_file: src/main.tex
           compiler: pdflatex
-          args: -output-dir=out
+          args: -output-dir=out -no-shell-escape
     
       - name: upload artifact
         uses: actions/upload-artifact@v3
