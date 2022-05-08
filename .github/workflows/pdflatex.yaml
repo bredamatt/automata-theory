@@ -27,9 +27,15 @@ jobs:
           name: main.pdf
           path: out/main.pdf
 
-      - name: create release
+      - name: create the release
+        uses: google-github-actions/release-please-action@v3.1
+        id: release
+        with:
+          release-type: latex
+
+      - name: upload artifact to release
         uses: softprops/action-gh-release@v1
         with:
           name: main.pdf
-          tag_name: github.ref
+          tag_name: ${{ steps.release.outputs.tag_name }}
           files: out/main.pdf
