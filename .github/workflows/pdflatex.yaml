@@ -27,15 +27,22 @@ jobs:
           name: main.pdf
           path: out/main.pdf
 
-      - name: create the release
-        uses: google-github-actions/release-please-action@v3.1
-        id: release
-        with:
-          release-type: latex
-
       - name: upload artifact to release
         uses: softprops/action-gh-release@v1
         with:
           name: main.pdf
           tag_name: ${{ steps.release.outputs.tag_name }}
+          files: out/main.pdf
+
+      - name: generate release tag
+        id: tag
+        run: |
+          echo "::set-output name=release_tag::LaTeXBuild-$(date +"%Y.%m.%d_%H-%M")"
+      
+      - name: release pdf
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.tag.outputs.release_tag }}
           files: out/main.pdf
