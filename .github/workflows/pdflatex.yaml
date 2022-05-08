@@ -27,13 +27,6 @@ jobs:
           name: main.pdf
           path: out/main.pdf
 
-      - name: upload artifact to release
-        uses: softprops/action-gh-release@v1
-        with:
-          name: main.pdf
-          tag_name: ${{ steps.release.outputs.tag_name }}
-          files: out/main.pdf
-
       - name: generate release tag
         id: tag
         run: |
