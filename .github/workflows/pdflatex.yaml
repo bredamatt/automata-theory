@@ -31,4 +31,5 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           name: main.pdf
+          tag_name: github.ref
           files: out/main.pdf
