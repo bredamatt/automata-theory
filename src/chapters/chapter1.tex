@@ -1,5 +1,42 @@
 \documentclass[../../main.tex]{subfiles}
 
+%% Preamble
+\usepackage{mathtools}
+
+
 \begin{document}
-This is Chapter 1.
+
+Symbols in strings, for example, \( a, b \), always belong to an alphabet.
+Hence, we can say an alphabet \(\sum\) is a set of characters, for example \(\{a, b\}\), is formally defined as:
+
+\begin{equation} \label{alphabet}
+Alphabet = \sum = \big\{ a, b \big\} 
+\end{equation}
+
+A language, \( L \), is a set over a particular alphabet. Hence:
+
+\begin{equation} \label{language}
+    Language = L1(\Sigma) = \big\{ a, aa, b, ab, ba, bba, ... \big\} 
+\end{equation}
+
+As you may see, the above language \( L1 \) is generated over the alphabet \( \Sigma \), and contains various combinations of the symbols in our alphabet. In theory,
+it is possible to create an infinite number of such combinations. Therefore, that language is an \textit{infinite} language. \\
+
+As you might have guessed, there are two main types of languages:
+
+\begin{itemize}
+\item infinite
+\item finite
+\end{itemize}
+
+For a language to be finite, we must restrict how symbols are combined. Such restrictions applied to a language produce a grammar, \( G \).
+Formally, we say that a grammar \( G \) is a tuple:
+
+\begin{equation} \label{grammar}
+    Grammar = G = ( N, T, P, S )
+\end{equation}
+
+where \(N\) = nonterminals, \(T\) = terminals, \(P\) = produtions, or rules, and \(S\) = starting symbol.
+
+
 \end{document}
